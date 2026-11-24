@@ -1,6 +1,6 @@
 (function () {
   const SUPABASE_URL = "https://hxyxwvpipnlxjyyoptyb.supabase.co";
-  const SUPABASE_ANON_KEY = "sb_publishable__jpS6C1gt3PYgGa-CLn_FA_1WdtqakK";
+  const SUPABASE_ANON_KEY = "sb_publishable__jpC6S1gt3PYgGa-CLn_FA_1WdtqakK";
 
   if (!window.supabase || !window.supabase.createClient) {
     console.error("Supabase library not loaded");
