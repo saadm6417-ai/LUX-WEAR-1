@@ -25,6 +25,53 @@ button:disabled{opacity:.55;cursor:wait;transform:none}
 .confirm-card p{color:#d0c9bc;line-height:1.8;margin:0 0 20px}
 .confirm-actions{display:flex;gap:10px}.confirm-actions button{flex:1}
 @media(max-width:600px){.row>*{min-width:100%}.confirm-card{padding:21px}}
+
+/* LUX WEAR dashboard layout redesign */
+body{background:#0b0c0e}
+main{max-width:1440px;padding:30px clamp(14px,3vw,42px)}
+main>h1{display:flex;align-items:center;gap:14px;font-size:30px;letter-spacing:.4px;margin:0 0 8px}
+main>h1:before{content:"LW";display:grid;place-items:center;width:48px;height:48px;border:1px solid #c9a86d;border-radius:14px;color:#c9a86d;font:700 16px Georgia,serif;letter-spacing:1px;background:linear-gradient(145deg,#282219,#111)}
+main>p.muted{margin:0 0 26px;color:#aaa49a}
+#dashboard{display:grid;grid-template-columns:250px minmax(0,1fr);grid-template-rows:auto auto;gap:18px;align-items:start}
+#dashboard>.row.panel{grid-column:1/-1;display:flex;align-items:center;min-height:72px;margin:0;padding:14px 20px;background:#151719;border-color:#302b22}
+#dashboard>.row.panel #who{font-size:14px;color:#d9c9a7}
+#dashboard>.row.panel button{max-width:170px;margin:0}
+#dashboard>nav.tabs{grid-column:1;grid-row:2;position:sticky;top:18px;display:flex;flex-direction:column;gap:8px;padding:12px;background:#141619;border:1px solid #353027;border-radius:16px}
+#dashboard>nav.tabs button{width:100%;min-height:48px;margin:0;text-align:right;padding:12px 16px;background:transparent;color:#d8d1c5;border:1px solid transparent;border-radius:10px;font-weight:500}
+#dashboard>nav.tabs button:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#71634a;margin-left:12px;vertical-align:middle}
+#dashboard>nav.tabs button:hover{background:#24211b;border-color:#51432b;color:#f4dfb6}
+#dashboard>nav.tabs button:focus{background:linear-gradient(90deg,#2a251b,#1c1c1a);border-color:#9c8050;color:#e6c98e}
+#dashboard>.tab{grid-column:2;grid-row:2;min-width:0;margin:0;padding:clamp(18px,2.5vw,30px);border-radius:18px;background:#151719;border:1px solid #393329;box-shadow:0 18px 55px #0003}
+#dashboard>.tab h2{margin:0 0 20px;padding-bottom:15px;border-bottom:1px solid #373128;font-size:22px}
+#dashboard>.tab>.muted{line-height:1.8;margin-top:-8px;margin-bottom:20px}
+#dashboard .item{background:#101214;border:1px solid #35312a;border-radius:13px;padding:16px;margin:12px 0}
+#dashboard .row{gap:14px}
+#dashboard input,#dashboard textarea,#dashboard select{min-height:44px}
+#dashboard textarea{min-height:110px;resize:vertical}
+#dashboard button{min-height:43px}
+#dashboard label{font-size:13px}
+#dashboard .tabs button{min-height:48px}
+#login{max-width:480px;margin:42px auto;padding:30px}
+#login h2{text-align:center;margin:0 0 22px}
+#login button{margin-top:14px}
+#globalMsg{margin-top:14px}
+@media(max-width:850px){
+ main{padding:18px 13px}
+ #dashboard{grid-template-columns:1fr;gap:12px}
+ #dashboard>.row.panel{grid-column:1;grid-row:1}
+ #dashboard>nav.tabs{grid-column:1;grid-row:2;position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ #dashboard>nav.tabs button{text-align:center;padding:10px 6px;font-size:13px}
+ #dashboard>nav.tabs button:before{margin-left:7px}
+ #dashboard>.tab{grid-column:1;grid-row:3}
+}
+@media(max-width:440px){
+ main>h1{font-size:23px}
+ main>h1:before{width:42px;height:42px}
+ #dashboard>.row.panel{flex-wrap:wrap}
+ #dashboard>.row.panel button{max-width:none}
+ #dashboard>nav.tabs{grid-template-columns:1fr 1fr}
+ #dashboard>.tab{padding:16px 12px}
+}
 </style><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./supabase-config.js"></script></head><body><main><h1>LUX WEAR — لوحة التحكم</h1><p class="muted">إدارة بيانات الموقع. تسجيل الدخول متاح لحساب المدير المضاف إلى قائمة admin_users فقط.</p>
 <section id="login" class="panel"><h2>تسجيل دخول المدير</h2><input id="email" type="email" placeholder="البريد الإلكتروني"><input id="password" type="password" placeholder="كلمة المرور"><button id="loginBtn">دخول</button><div id="loginMsg" class="status"></div></section>
 <section id="dashboard" class="hidden"><div class="row panel"><div id="who"></div><button id="logoutBtn" class="secondary">تسجيل الخروج</button></div><nav class="tabs"><button data-tab="care">تعليمات العناية</button><button data-tab="hours">مواعيد العمل</button><button data-tab="content">محتوى الصفحات</button><button data-tab="reviews">تقييمات العملاء</button></nav>
