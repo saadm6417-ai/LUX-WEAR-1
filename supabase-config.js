@@ -1,6 +1,8 @@
+
 (function () {
   const SUPABASE_URL = "https://hxyxwvpipnlxjyyoptyb.supabase.co";
-  const SUPABASE_ANON_KEY = "sb_publishable__jpC6S1gt3PYgGa-CLn_FA_1WdtqakK";
+
+  const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh4eXh3dnBpcG5seGp5eW9wdHliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUyODkwMDEsImV4cCI6MjExMDg2NTAwMX0.zU2xBadDHV2Y-mZHjDVsswqutvcotiQiVjpEhF61Ag4";
 
   if (!window.supabase || !window.supabase.createClient) {
     console.error("Supabase library not loaded");
