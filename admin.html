@@ -153,6 +153,24 @@ main>h1:before{box-shadow:0 5px 20px #0005}
 .profile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.profile-grid .item{margin:0}
 .report-tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}.report-tools>*{flex:1;min-width:130px}
 @media(max-width:700px){.profile-grid{grid-template-columns:1fr}}
+
+/* FIX: corner menu, remove signed-in banner, reliable mobile drawer */
+#dashboard>.row.panel{display:none!important}
+#dashboard>.mobile-menu-btn{position:fixed!important;top:12px!important;right:12px!important;z-index:10002!important;display:inline-flex!important;width:auto!important;max-width:none!important;min-height:44px!important;padding:10px 14px!important;box-shadow:0 8px 25px #0007!important;background:#211d17!important;border:1px solid #806743!important;border-radius:12px!important;color:#e7ca91!important}
+#dashboard>nav.tabs{z-index:10001!important}
+@media(min-width:701px){
+ #dashboard>nav.tabs{position:fixed!important;top:68px!important;left:12px!important;right:12px!important;width:auto!important;z-index:10001!important;display:flex!important;flex-direction:row!important;justify-content:flex-start!important;overflow-x:auto!important;padding:10px!important;background:#111315!important;border:1px solid #3c3326!important;box-shadow:0 14px 40px #0009!important}
+ #dashboard>nav.tabs:not(.mobile-open){display:none!important}
+ #dashboard>nav.tabs.mobile-open{display:flex!important}
+ #dashboard>.tab{margin-top:16px!important}
+}
+@media(max-width:700px){
+ #dashboard>nav.tabs{display:none!important;position:fixed!important;z-index:10001!important;top:0!important;right:0!important;bottom:0!important;left:auto!important;width:min(82vw,310px)!important;height:100dvh!important;overflow-y:auto!important;flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important;margin:0!important;padding:80px 14px 24px!important;border-radius:0 0 0 18px!important;background:#111315!important;box-shadow:-20px 0 60px #000b!important}
+ #dashboard>nav.tabs.mobile-open{display:flex!important}
+ #dashboard>nav.tabs button{width:100%!important;text-align:right!important;padding:14px 16px!important;min-height:48px!important}
+ #dashboard>.mobile-menu-btn{top:8px!important;right:8px!important}
+ main>h1{padding-top:58px!important}
+}
 </style><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="./supabase-config.js"></script></head><body><main><h1>LUX WEAR — لوحة التحكم</h1><p class="muted">إدارة بيانات الموقع. تسجيل الدخول متاح لحساب المدير المضاف إلى قائمة admin_users فقط.</p>
 <section id="login" class="panel"><h2>تسجيل دخول المدير</h2><input id="email" type="email" placeholder="البريد الإلكتروني"><input id="password" type="password" placeholder="كلمة المرور"><button id="loginBtn">دخول</button><div id="loginMsg" class="status"></div></section>
 <section id="dashboard" class="hidden"><div class="row panel"><div id="who"></div></div><button id="mobileMenuBtn" class="mobile-menu-btn secondary" type="button" aria-label="فتح القائمة">☰ القائمة</button><nav class="tabs" id="mainNav"><button data-tab="home">الرئيسية</button><button data-tab="siteReport">زوار الموقع</button><button data-tab="followersReport">المتابعون</button><button data-tab="unfollowReport">إلغاء المتابعة</button><button data-tab="reviews">التقييمات</button><button data-tab="care">العناية</button><button data-tab="hours">مواعيد العمل</button><button data-tab="content">محتوى الصفحات</button><button data-tab="team">الموظفون</button><button data-tab="profile">الملف الشخصي</button></nav>
